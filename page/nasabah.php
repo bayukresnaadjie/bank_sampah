@@ -1,12 +1,14 @@
 <?php
 session_start();
-if (empty($_SESSION['user_n']) && empty($_SESSION['pass_n'])) {header('location:login.php');} 
-else {   
-error_reporting(E_ALL | E_STRICT); 
-include_once("../system/config/koneksi.php");
+if (empty($_SESSION['user_n']) && empty($_SESSION['pass_n'])) {
+	header('location:login.php');
+} else {
+	error_reporting(E_ALL | E_STRICT);
+	include_once("../system/config/koneksi.php");
 ?>
-<!DOCTYPE html>
-<html>
+	<!DOCTYPE html>
+	<html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>Nasabah</title>
@@ -15,21 +17,22 @@ include_once("../system/config/koneksi.php");
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="shortcut icon" href="../asset/internal/img/img-local/favicon.ico">
 		<style>
-		  button{
-          height: 27px;
-          width: 85px;
-          background: #8cd91a;
-          border-radius: 5px;
-          color: #fff;
-          font-family: Montserrat;
-        }
+			button {
+				height: 27px;
+				width: 85px;
+				background: #8cd91a;
+				border-radius: 5px;
+				color: #fff;
+				font-family: Montserrat;
+			}
 		</style>
 	</head>
+
 	<body>
 		<div class="sidebar">
 			<ul>
 				<li>
-					<a href="nasabah.php?page=data-nasabah" style="text-align: center; padding: 30px 0 30px 0; font-size: 20px;">Nasabah, <?php echo $_SESSION['user_n']; ?></a>
+					<a href="nasabah.php?page=data-nasabah" style="text-align: center; padding: 30px 0 30px 0; font-size: 20px;">NASABAH </a>
 				</li>
 
 				<li>
@@ -57,10 +60,10 @@ include_once("../system/config/koneksi.php");
 
 		<div class="box-1">
 			<section>
-	
-				<?php 
-					if(isset($_GET['page'])){
-						$page = $_GET['page'];
+
+				<?php
+				if (isset($_GET['page'])) {
+					$page = $_GET['page'];
 
 					switch ($page) {
 						case 'data-nasabah':
@@ -80,19 +83,20 @@ include_once("../system/config/koneksi.php");
 							break;
 						case 'edit-nasabah':
 							include "../system/function/edit-nasabah.php";
-							break;			
+							break;
 						default:
 							echo "<center><h3>Maaf. Halaman tidak di temukan !</h3></center>";
 							break;
 					}
-				}else{
+				} else {
 					include "../system/function/view-nasabah.php";
 				}
 
-				 ?>
+				?>
 			</section>
 		</div>
 
 	</body>
-</html>
+
+	</html>
 <?php } ?>

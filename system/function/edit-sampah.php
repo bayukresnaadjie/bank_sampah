@@ -96,8 +96,8 @@ if (isset($_POST['simpan'])) {
   <?php if (isset($_GET['id'])) {
     $id = $_GET['id']; ?>
     <?php
-    if ($cek = mysqli_query($conn, "SELECT * FROM sampah WHERE id='" . $_GET['id'] . "'"));
-    while ($row = mysqli_fetch_array($cek));
+    $cek = mysqli_query($conn, "SELECT * FROM sampah WHERE jenis_sampah='" . $_GET['id'] . "'");
+    $row = mysqli_fetch_array($cek);
     ?>
 
     <form action="" method="post" enctype="multipart/form-data">
@@ -105,7 +105,6 @@ if (isset($_POST['simpan'])) {
       <div class="form-group">
         <label class="">Jenis Sampah</label>
         <input type="text" name="jenis_sampah" value="<?php echo $row['jenis_sampah'] ?> " />
-        <input type="hidden" name="id" value="<?php echo $row['id'] ?> " />
       </div>
       <div class="form-group">
         <label class="">Satuan</label>

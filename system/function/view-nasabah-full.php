@@ -27,9 +27,9 @@
                     <th>Alamat</th>
                     <th>Telepon</th>
                     <th>E-mail</th>
-                    <th>Aksi</th>
                     <th>Saldo</th>
                     <th>Sampah</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tfoot>
@@ -40,9 +40,9 @@
                     <th>Alamat</th>
                     <th>Telepon</th>
                     <th>E-mail</th>
-                    <th>Aksi</th>
                     <th>Saldo</th>
                     <th>Sampah</th>
+                    <th>Aksi</th>
                 </tr>
             </tfoot>
             <tbody>
@@ -57,6 +57,8 @@
                         <td><?php echo $row['alamat'] ?></td>
                         <td><?php echo $row['telepon'] ?></td>
                         <td><?php echo $row['email'] ?></td>
+                        <td><?php echo "Rp. " . number_format($row['saldo'], 2, ",", ".") ?></td>
+                        <td><?php echo number_format($row['sampah']) . " Kg" ?></td>
                         <td>
                             <a href="admin.php?page=edit-nasabah-id&id=<?php echo $row['nin']; ?>">
                                 <button><i class="fa fa-pencil"></i>edit</button>

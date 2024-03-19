@@ -178,7 +178,7 @@ require 'system/config/koneksi.php'
 
       <div>
         <i class="fa fa-map-marker"></i>
-        <p><span>Desa Karangwotan</span> Kecamatan Pucakwangi, Kabupaten Pati.</p>
+        <p>Perum Pepabri, Rw. V, Boro Kulon Kec. Banyuurip, Kabupaten Purworejo, Jawa Tengah 54171</p>
       </div>
 
       <div>
